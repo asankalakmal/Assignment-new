@@ -43,9 +43,9 @@ Class logicGenerator {
 	 * @return string
 	 * */
 	public function logicGenerate ($val1,$val2)
-	{
+	{	//Loop the range
 		for( $i=$val1; $i<=$val2; $i++ )
-		{
+		{	
 			$this->final_result.=$this->resultGenerate ($i).'  ';
 		}
 		return $this->final_result;
