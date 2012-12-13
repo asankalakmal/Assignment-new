@@ -1,0 +1,6 @@
+<?php
+
+Class logicGenerator {
+
+
+}
