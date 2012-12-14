@@ -14,7 +14,7 @@ div#wrapper{ margin:0 auto; width:800px; border:solid 2px #b7ddf2; background:#e
 #form .label{ display:block; font-weight:bold; margin-top:5px;text-align:right; width:140px; float:left;}
 #form .small{ color:#666666; display:block; font-size:11px; font-weight:normal; text-align:right; width:140px;}
 #form input{ float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:200px; margin:2px 0 5px 10px;}
-#form button{ clear:both; float:left; cursor:pointer; margin-left:150px; width:125px; height:31px; background:#666666 url(img/button.png) no-repeat; text-align:center; line-height:31px; color:#FFFFFF; font-size:11px; font-weight:bold;}
+#form button{ clear:both; float:left; cursor:pointer; margin-left:150px; width:125px; height:31px; background:#666666; text-align:center; line-height:31px; color:#FFFFFF; font-size:11px; font-weight:bold;}
 #form  div.error { padding:2px 4px; margin-bottom:10px; border:solid 1px #FBD3C6; background:#FDE4E1; color:red; font-size:14px;  text-align:center;}
 #form  div.result { padding:2px 4px; margin:20px 0 10px 0px; border:solid 1px #C0F0B9; background:#D5FFC6; color:#48A41C; font-size:14px;  text-align:center;}
 #form .hide {display:none}
