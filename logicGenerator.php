@@ -8,6 +8,7 @@
  * Description     This file have functions associate with Logic calculation 
  *
  * */
+ 
 Class logicGenerator {
 	
 	public $final_result=null;// Final result 
