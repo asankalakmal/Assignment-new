@@ -38,4 +38,17 @@ class formValidator {
 		return true;
 	}
 	
+	/**
+	 * Check the value format is correct or not ( to value should be higher than the from value)
+	 *
+	 * @return boolean
+	 * */
+	function isEmpty ($val)
+	{	
+		if(empty($val1)){
+			return false;
+		}
+		return true;
+	}
+	
 }

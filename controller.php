@@ -4,25 +4,39 @@ require_once('logicGenerator.php');
 require_once('formValidator.php');
 
 $error=null;
+$result=null;
 if($_POST['submit']== "logcalculate")
 {
 	$from=$_POST['from'];
 	$to=$_POST['to'];
-	//$generatotr = new logicGenerator();
-    //$generatotr->logicGenerate ($val1,$val2);
-	
+	if(!$this->checkErrors ($from, $to)) {
+		return json_encode('success'=>false,'error'=>$this->error);
+	}
+	$generatotr = new logicGenerator();
+    $this->result=$generatotr->logicGenerate ($from, $to);
+	return json_encode('success'=>true,'result'=>$this->result);
 }
 
 function checkErrors ($from, $to)
 {	
 	$validator= new formValidator();
 	//Check from value is positive integer or not
-	if(!$validator->isPositiveInteger ($from))
+	if(!$validator->isEmpty ($from) || !$validator->isEmpty ($to))
 	{
-		$this->error="From value should be positive integer !";
+		$this->error="All fields are mandatory!";
+		return false;
 	}
-	if(!$validator->isPositiveInteger ($to))
+	//Check from value is positive integer or not
+	if(!$validator->isPositiveInteger ($from) || !$validator->isPositiveInteger ($to))
 	{
-		$this->error="To value should be positive integer !";
+		$this->error="All value should be positive integer !";
+		return false;
 	}
+	//Check from value is positive integer or not
+	if(!isCorrectFormat ($from, $to))
+	{
+		$this->error="To value should be higher than the from value !";
+		return false;
+	}
+	return true;
 }
