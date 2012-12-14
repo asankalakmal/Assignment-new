@@ -12,7 +12,7 @@
 	<div id="wrapper" class="myform">
 		<form id="form" name="form" method="post">
 			<h1>Assignment</h1>
-			<p>Please enter your value range ( Task 1 )</p>
+			<p>Please enter your value range ( Task 2 )</p>
 			<div class="error hide" id="error-block"></div>
 			<label class="label">From</label>
 			<div class="form-element">	

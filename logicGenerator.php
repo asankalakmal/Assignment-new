@@ -23,15 +23,17 @@ Class logicGenerator {
 	{
 		$is_printed=false;
 		$result=null;
-		if( $val%3 == 0 ) {// if value multiple of 3 then result is fuzz
-			$result='fuzz';
-			$is_printed=true;
+		if( $val%3 == 0 ) {// if value multiple of 3 then 
+			if( $val%5 != 0 ) {// if variable not a multiple of 5 then result is fuzz
+				$result='fuzz';
+				$is_printed=true;
+			}
 		}
 		if( $val%5 == 0 ) {// if value multiple of 5 then result is buzz
 			$result.='buzz';
 			$is_printed=true;
 		}
-		
+
 		if( !$is_printed ) {// if value is not a multiple of 5 or 3 result equal to value
 			$result=$val;
 		}
