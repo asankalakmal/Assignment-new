@@ -39,7 +39,7 @@ class formValidator {
 	}
 	
 	/**
-	 * Check the value format is correct or not ( to value should be higher than the from value)
+	 * Check the value is empty or not
 	 *
 	 * @return boolean
 	 * */

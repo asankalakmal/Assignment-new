@@ -5,16 +5,17 @@ require_once('formValidator.php');
 
 $error=null;
 $result=null;
-if($_POST['submit']== "logcalculate")
+if(isset( $_POST['submit'] ) && $_POST['submit']== "logcalculate")
 {
 	$from=$_POST['from'];
 	$to=$_POST['to'];
 	if(!$this->checkErrors ($from, $to)) {
-		return json_encode('success'=>false,'error'=>$this->error);
+	echo 'errors';
+		return json_encode(array('success'=>false,'error'=>$this->error));
 	}
 	$generatotr = new logicGenerator();
     $this->result=$generatotr->logicGenerate ($from, $to);
-	return json_encode('success'=>true,'result'=>$this->result);
+	return json_encode(array('success'=>true,'result'=>$this->result));
 }
 
 function checkErrors ($from, $to)

@@ -10,19 +10,19 @@
 <body>
 
 	<div id="wrapper" class="myform">
-		<form id="form" name="form" method="post" action="#">
+		<form id="form" name="form" >
 			<h1>Assignment</h1>
-			<p>Task 1</p>
+			<p>Please enter your value range ( Task 1 )</p>
 			<div class="error hide"></div>
 			<label class="label">From</label>
 			<div class="form-element">	
-				<input type="text" name="from" numaric id="from" />
+				<input type="text" name="from" id="from" />
 			</div>
 			<label class="label">To</label>
 			<div class="form-element">	
 				<input type="text" name="to" id="to" />
 			</div>
-			<button type="submit">Generate</button>
+			<button type="submit" id="generate">Generate</button>
 			<div class="spacer"></div>
 			<div class="result hide"></div>	
 		</form>
@@ -33,7 +33,7 @@
 
 $(document).ready(function(){
 
-	$("#form").validate({
+	$validate=$("#form").validate({
 			rules: {
 				from: {
 					required: true,
@@ -53,12 +53,31 @@ $(document).ready(function(){
 					required: "Please enter to value",
 					positiveNumber:"Positive numbers only",
 				}
+			},
+			submitHandler: function() {
+				ajaxSubmit();
 			}
 	});
 	$.validator.addMethod('positiveNumber',function (value) { 
         return Number(value) > 0;
     }, 'Enter a positive number.');
-
+	
+	
+	function ajaxSubmit() {
+		var from=$('#from').val();
+		var to=$('#to').val();
+		$.ajax({
+			  url: "controller.php",
+			  global: false,
+			  type: "POST",
+			  data: ({from : from, to : to , submit : 'logcalculate'}),
+			  dataType: "json",
+			  success: function(msg){
+				 alert(msg);
+				}
+			}
+		);
+	}
 });
 </script>
 </html>
