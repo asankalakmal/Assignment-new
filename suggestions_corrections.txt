@@ -31,3 +31,19 @@ data.php
 
 8) baseObj class 'getAll','get' method : sql statement have undefine variable ($table), so should pass table name also as a parameter
 
+9) baseObj class 'get' method return only row query statement(didn't fetch ) so should add fetch_row() method and return it.
+
+
+
+
+suggestions :
+
+test.html
+
+1) Use ajax post insted of get : get is not secure method 
+
+getinfo.php file
+
+2) Use $_POST['id'] method insted of url splitting  ( split('/', $_SERVER[REQUEST_URI])); )
+3)
+
