@@ -1,4 +1,4 @@
-Corrections:
+Error Corrections:
 
 data.sql file
 
@@ -13,4 +13,5 @@ So table engine should be MyISAM
 
 getinfo.php file
 
-3) Use return without function ( use echo insted of return )
+3) Use return without function ( return json_encode( $data->getAll($id) ); ) use echo insted of return )
+4) If condition ( is_object($data) = true ) have incorrect syntax shouldbe '==' insted of '='

@@ -6,7 +6,7 @@ class baseObj {
 
     public function __construct ()
     {
-        $this->mysql = new mysqli("localhost", "root", "", "assignment");
+        $this->mysql = new mysqli("localhost", "rootx", "", "assignment");
         if ($this->mysql->connect_errno) {
             echo "Failed to connect to MySQL: (" . $this->mysql->connect_errno . ") " . $this->mysql->connect_error;
         }
