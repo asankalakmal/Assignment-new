@@ -4,10 +4,10 @@
 <SCRIPT SRC="http://code.jquery.com/jquery-1.7.2.js"></SCRIPT>
 <script>
 <!--//
-Get the data using ajax
+//Get the data using ajax
 //-->
 $.get(
-    "/getinfo/111", {},
+"getinfo.php/111", {},
     function(data) { $('.InfoDiv').html(data); }
 );
 </script>

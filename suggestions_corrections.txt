@@ -1,0 +1,16 @@
+Corrections:
+
+data.sql file
+
+1) In the data.sql file, HDB,Condo tables can't execute(create) because table engine is Innodb 
+   Innodb can't use forign key constrains but this tables use forign keys.
+
+So table engine should be MyISAM
+
+2) Condo table don't have primary key and ID coloum is AUTO_INCREMENT so primary key should be define
+   as ID coloum
+
+
+getinfo.php file
+
+3) Use return without function ( use echo insted of return )
