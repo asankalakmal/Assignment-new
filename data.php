@@ -6,18 +6,18 @@ class baseObj {
 
     public function __construct ()
     {
-        $this->mysql = new mysqli("localhost", "rootx", "", "assignment");
+        $this->mysql = new mysqli("localhost", "root", "", "assignment");
         if ($this->mysql->connect_errno) {
             echo "Failed to connect to MySQL: (" . $this->mysql->connect_errno . ") " . $this->mysql->connect_error;
         }
     }
 
-    public function get ($id, $field)
+    public function get ($id, $field ,$table)
     {
         return $this->mysql->query("SELECT $field FROM $table WHERE ID = $id");
     }
 
-    public function getAll ($id)
+    public function getAll ($id,$table)
     {
         $res = $this->mysql->query("SELECT * FROM $table WHERE ID = $id");
         return $res->fetch_assoc();

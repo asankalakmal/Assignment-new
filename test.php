@@ -7,7 +7,7 @@
 //Get the data using ajax
 //-->
 $.get(
-"getinfo.php/111", {},
+"getinfo.php/1", {},
     function(data) { $('.InfoDiv').html(data); }
 );
 </script>
