@@ -17,5 +17,5 @@ $.get(
 <CENTER><DIV CLASS="InfoDiv"></DIV></CENTER>
 </BODY>
 <DIV ID="fb-root"></DIV>
-<SCRIPT></SCRIPT>
+<SCRIPT></SCRIPT> 
 </HTML>
