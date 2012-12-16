@@ -14,7 +14,8 @@
 			data: ({id : 1}),
 			dataType: "json",
 			success: function(data){
-				$('.InfoDiv').html(data);
+				//console.log(data[0]);
+				$('.InfoDiv').html(data[0]);
 			}
 		}
 	);
