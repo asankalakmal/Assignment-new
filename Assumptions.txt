@@ -1,0 +1,3 @@
+Assumptions:
+1. The webserver has been configured and running.
+2. The Mysql Server has been configured and running.
