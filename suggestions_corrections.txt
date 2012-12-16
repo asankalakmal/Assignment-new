@@ -3,23 +3,23 @@ Error Corrections:
 data.sql file
 
 1) In the data.sql file, HDB,Condo tables can't execute(create) because table engine is Innodb 
-   Innodb can't use forign key constrains but this tables use forign keys.
+   Innodb can't use foreign key constrains but this tables use foreign keys.
 
 So table engine should be MyISAM
 
 2) Condo table don't have primary key and ID coloum is AUTO_INCREMENT so primary key should be define
-   as ID coloum
+   as ID column
 
 
 getinfo.php file
 
-3) Use return without function ( return json_encode( $data->getAll($id) ); ) use echo insted of return )
-4) If condition ( is_object($data) = true ) have incorrect syntax shouldbe '==' insted of '=' and  $_SERVER[REQUEST_URI]
+3) Use return without function ( return json_encode( $data->getAll($id) ); ) use echo instead of return )
+4) If condition ( is_object($data) = true ) have incorrect syntax should be '==' instead of '=' and  $_SERVER[REQUEST_URI]
 should be $_SERVER['REQUEST_URI']
 
 5) split is deprecated Function since php 5.3 (http://php.net/manual/en/function.split.php) 
 $ArrayURL = split('/', $_SERVER['REQUEST_URI']);
-so we can use explode function insted of split function
+so we can use explode function instead of split function
 '
 6) Created object is wrong because do't have class according to the 'dataObj' ($data = new dataObj();)
 it should be 'baseObj'
@@ -29,9 +29,15 @@ it should be 'baseObj'
 
 data.php
 
-8) baseObj class 'getAll','get' method : sql statement have undefine variable ($table), so should pass table name also as a parameter
+8) baseObj class 'getAll','get' method : sql statement have undefined variable ($table), so should pass table name also as a parameter
+(hdbData,condoData,propertyData all classes changed)
 
 9) baseObj class 'get' method return only row query statement(didn't fetch ) so should add fetch_row() method and return it.
+
+
+
+
+
 
 
 
@@ -40,10 +46,17 @@ suggestions :
 
 test.html
 
-1) Use ajax post insted of get : get is not secure method 
+1) Use ajax post instead of get : get is not secure method 
 
-getinfo.php file
+getinfo.php 
 
-2) Use $_POST['id'] method insted of url splitting  ( split('/', $_SERVER[REQUEST_URI])); )
-3)
+2) Use $_POST['id'] method instead of url splitting  ( split('/', $_SERVER[REQUEST_URI])); )
 
+data.php
+
+3) Create singleton patten for the db connection ( db connection add in to another class call db)
+
+4) Write join query instead of write separate query 
+reason : we need to know each table ids (eg: we need to get 'condo' table id=5 all data so also need maching id of the 'propertyData' table  )
+
+5) Call parent constructors and pass table name as a parameter

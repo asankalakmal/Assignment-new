@@ -18,5 +18,4 @@ class db {
 			return self::$instance;
 		}
 	}
-
 }
