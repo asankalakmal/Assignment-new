@@ -36,7 +36,7 @@ class formValidatorTest extends PHPUnit_Framework_TestCase{
 	public function testisPositiveInteger ()
 	{
 		
-		// use assertEquals to ensure the greeting is what you
+		// use assertEquals to ensure result is correct
         $expected = true;
         $actual = $this->validator_obj->isPositiveInteger(5);
         $this->assertEquals($expected, $actual);
@@ -47,7 +47,7 @@ class formValidatorTest extends PHPUnit_Framework_TestCase{
 	 * */
 	public function testisCorrectFormat()
 	{	
-		// use assertEquals to ensure the greeting is what you
+		// use assertEquals to ensure result is correct
         $expected = true;
         $actual = $this->validator_obj->isCorrectFormat(20,40);
         $this->assertEquals($expected, $actual);
@@ -58,7 +58,7 @@ class formValidatorTest extends PHPUnit_Framework_TestCase{
 	 * */
 	public function testisEmpty ()
 	{	
-		// use assertEquals to ensure the greeting is what you
+		// use assertEquals to ensure result is correct
         $expected = false;
         $actual = $this->validator_obj->isEmpty(' ');
         $this->assertEquals($expected, $actual);
