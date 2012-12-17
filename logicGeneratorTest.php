@@ -2,9 +2,9 @@
 require_once "PHPUnit/Autoload.php";
 require_once "logicGenerator.php";
 /**
- * Title           Logic Generator
+ * Title           Logic Generator Test
  * @author         Asanka - <<asankalakmal[at]gmail[dot]com>>
- * created on      12-13-2012, 10:30AM by Asanka
+ * created on      12-16-2012, 10:30PM by Asanka
  * updated on      
  *
  * Description     This file have functions associate with logicGenerator Unit test
