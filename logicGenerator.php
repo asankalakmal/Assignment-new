@@ -37,7 +37,7 @@ Class logicGenerator {
 		}
 		// if value not a multiple of 5 or 3 and consecutive Fizzes/Buzzes then result is buzz
 		if( ($this->buzz_print && $this->fuzz_print) &&  ( $val%5 != 0 && $val%3 != 0) ) {
-			$result='buzz';
+			$result='bazz';
 			$is_printed=true;
 			$this->buzz_print=false;
 			$this->fuzz_print=false;
