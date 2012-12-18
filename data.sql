@@ -7,7 +7,7 @@ CREATE TABLE Property (
     Living_room INT default 0,
     Diningroom INT default 0,
     Size Decimal(6,2) default 0.0
-) ENGINE=INNODB;
+) ENGINE=MYISM;
 
 CREATE TABLE HDB (
     ID BIGINT AUTO_INCREMENT PRIMARY KEY,
