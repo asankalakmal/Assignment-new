@@ -7,7 +7,7 @@ CREATE TABLE Property (
     Living_room INT default 0,
     Diningroom INT default 0,
     Size Decimal(6,2) default 0.0
-) ENGINE=MyISAM;
+) ENGINE=INNODB;
 
 CREATE TABLE HDB (
     ID BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -15,12 +15,12 @@ CREATE TABLE HDB (
     HDBBlock INT NOT NULL,
     INDEX idx_PID (PID), 
     FOREIGN KEY (PID) REFERENCES Property(ID)
-) ENGINE=MyISAM;
+) ENGINE=INNODB;
 
 CREATE TABLE Condo (
     ID BIGINT AUTO_INCREMENT PRIMARY KEY,
-    PID INT NOT NULL,
+    PID BIGINT NOT NULL,
     SwimmingPool TINYINT default 0,
     INDEX idx_PID (PID), 
     FOREIGN KEY (PID) REFERENCES Property(ID)
-) ENGINE=MyISAM;
+) ENGINE=INNODB;
