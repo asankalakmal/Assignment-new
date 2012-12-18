@@ -2,10 +2,8 @@ Error Corrections:
 
 data.sql file
 
-1) In the data.sql file, HDB,Condo tables can't execute(create) because table engine is Innodb 
-   Innodb can't use foreign key constrains but this tables use foreign keys.
+1) In the data.sql file, can't execute because some errors are there , In the 'Condo' table PID should be BIGINT
 
-So table engine should be MyISAM
 
 2) Condo table don't have primary key and ID coloum is AUTO_INCREMENT so primary key should be define
    as ID column
